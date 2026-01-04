@@ -1,8 +1,7 @@
 import psutil
 import os
 import shutil
-# Importações necessárias para o volume funcionar
-from pycaw.pycaw import AudioUtilities, ISimpleAudioVolume
+
 
 def obter_processos_pesados():
     processos = []

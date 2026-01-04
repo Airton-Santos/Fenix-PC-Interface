@@ -10,9 +10,11 @@ def chamar_feni_na_nuvem(mensagem):
         response = requests.get(url, params=params, timeout=15)
         
         if response.status_code == 200:
-            data = response.json()
-            # No seu servidor, a chave de resposta é "Feni"
-            return data.get("Feni", "Não recebi resposta da Feni.")
+            try:
+                data = response.json()
+                return data.get("Feni", "Não recebi resposta da Feni.")
+            except ValueError:
+                return "Erro: O servidor respondeu, mas o formato dos dados está incorreto."
         else:
             return f"Erro no servidor: Status {response.status_code}"
             

@@ -4,8 +4,8 @@ import speech_recognition as sr
 class ConfigAudio:
     def __init__(self):
         # Ajuste de sensibilidade (80 é bom para microfones sensíveis)
-        self.ENERGY_THRESHOLD = 80 
-        self.PAUSE_THRESHOLD = 0.8
+        self.ENERGY_THRESHOLD = 650
+        self.PAUSE_THRESHOLD = 0.9
         self.DYNAMIC_ENERGY = False
         
         # Palavras que despertam a Feni

@@ -1,6 +1,6 @@
 import requests
 
-def chamar_feni_na_nuvem(mensagem):
+def chamar_fenix_na_nuvem(mensagem):
     # Definimos a URL base da sua API FastAPI
     url = "https://fenix-brain-production.up.railway.app/comunicar"
     
@@ -12,7 +12,7 @@ def chamar_feni_na_nuvem(mensagem):
         if response.status_code == 200:
             try:
                 data = response.json()
-                return data.get("Feni", "Não recebi resposta da Feni.")
+                return data.get("Fenix", "Não recebi resposta da Fenix.")
             except ValueError:
                 return "Erro: O servidor respondeu, mas o formato dos dados está incorreto."
         else:

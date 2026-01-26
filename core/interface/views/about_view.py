@@ -31,13 +31,13 @@ class AboutView(ft.Container):
                 ft.Row([
                     ft.TextButton(
                         "MEU GITHUB", 
-                        icon="code", 
+                        icon=ft.Icons.CODE, 
                         style=nav_style, 
                         on_click=lambda _: webbrowser.open("https://github.com/Airton-Santos")
                     ),
                     ft.TextButton(
                         "PORTFÓLIO", 
-                        icon="language", 
+                        icon=ft.Icons.LANGUAGE, 
                         style=nav_style, 
                         on_click=lambda _: webbrowser.open("https://seu-portfolio.com")
                     ),

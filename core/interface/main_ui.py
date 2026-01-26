@@ -3,7 +3,8 @@ import psutil
 import threading
 import time
 from core.interface.views.home_view import HomeView
-from core.interface.views.about_view import AboutView 
+from core.interface.views.about_view import AboutView
+from core.interface.views.ProtocolView import ProtocolView
 
 class FenixUI:
     def __init__(self, brain_callback=None):
@@ -12,6 +13,7 @@ class FenixUI:
         # Instanciando as Views
         self.view_home = HomeView()
         self.view_about = AboutView()
+        self.view_protocol = ProtocolView()
         
         # Container dinâmico
         self.content_area = ft.Container(content=self.view_home, expand=True)
@@ -51,16 +53,22 @@ class FenixUI:
                     
                     # CORREÇÃO: Usando strings diretas para os ícones
                     ft.TextButton(
-                        "HOME", 
-                        icon="terminal", 
+                        "INICIO", 
+                        icon=ft.Icons.TERMINAL,
                         style=nav_style, 
                         on_click=lambda _: self.navegar("home")
                     ),
                     ft.TextButton(
-                        "Abount", 
-                        icon="settings", 
+                        "INFORMAÇÕES", 
+                        icon=ft.Icons.SETTINGS, 
                         style=nav_style, 
                         on_click=lambda _: self.navegar("about")
+                    ),
+                    ft.TextButton(
+                        "COMANDOS", 
+                        icon=ft.Icons.DESCRIPTION, 
+                        style=nav_style, 
+                        on_click=lambda _: self.navegar("protocol")
                     ),
                     
                     ft.Divider(color="#1f1f1f", height=40),
@@ -97,6 +105,8 @@ class FenixUI:
             self.content_area.content = self.view_home
         elif destino == "about":
             self.content_area.content = self.view_about
+        elif destino == "protocol":
+            self.content_area.content = self.view_protocol
         
         self.page.update()
 

@@ -8,13 +8,8 @@ class ConfigAudio:
         self.PAUSE_THRESHOLD = 0.9
         self.DYNAMIC_ENERGY = False
         
-        # Palavras que despertam a Feni
-        self.WAKE_WORDS = ["fênix", "fenix"]
-        
         # Comandos críticos de sistema
         self.CMD_DESLIGAR = ["desligar projeto fênix", "desligar fenix", "encerrar sistema"]
-        self.CMD_DESATIVAR_VOZ = ["descansar", "esperar", "ficar em espera", "parar de ouvir"]
-        self.CMD_VERIFICAR_PC = ["verificar computador", "diagnóstico", "status do sistema"]
 
     def configurar_reconhecedor(self, reconhecedor):
         reconhecedor.energy_threshold = self.ENERGY_THRESHOLD

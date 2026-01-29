@@ -19,6 +19,14 @@ class ProtocolView(ft.Container):
 
                 ft.Container(height=20),
 
+                # --- SEÇÃO: NAVEGAÇÃO DE DIRETÓRIOS ---
+                self.criar_cabecalho(ft.Icons.EXPLORE, "NAVEGAÇÃO E EXPLORADOR"),
+                self.comando_item("Fenix, onde você está?", "Informa o diretório atual de operação."),
+                self.comando_item("Fenix, o que tem aqui?", "Lista todos os arquivos e pastas do local atual."),
+                self.comando_item("Fenix, vá para [caminho]", "Altera o diretório de trabalho do Fenix."),
+
+                ft.Container(height=20),
+
                 # --- SEÇÃO: MEMÓRIA (ANOTAÇÕES) ---
                 self.criar_cabecalho(ft.Icons.MEMORY, "MEMÓRIA E APRENDIZADO"),
                 self.comando_item("Fenix, novo amigo", "Adiciona alguém à lista 'amigos'."),
@@ -34,6 +42,15 @@ class ProtocolView(ft.Container):
                 self.comando_item("Fenix, remover amigo", "Retira um contato da lista de amigos."),
                 self.comando_item("Fenix, remover informação", "Remove dados da categoria 'pessoal'."),
                 self.comando_item("Fenix, limpar rede social", "Deleta registros de redes sociais."),
+
+                ft.Container(height=20),
+
+                # --- SEÇÃO: GESTÃO DE ARQUIVOS ---
+                self.criar_cabecalho(ft.Icons.FILE_OPEN, "GESTÃO DE ARQUIVOS E PROJETOS"),
+                self.comando_item("Fenix, novo projeto [Nome]", "Cria pasta oficial e registra no Supabase."),
+                self.comando_item("Fenix, criar arquivo [nome.ext]", "Gera um arquivo avulso no diretório FENIX_FILES."),
+                self.comando_item("Fenix, criar pasta [nome]", "Cria uma pasta avulsa no Windows."),
+                self.comando_item("Fenix, remover [nome]", "Exclui um arquivo ou pasta (Cuidado!)."),
 
                 ft.Container(height=40),
             ]
